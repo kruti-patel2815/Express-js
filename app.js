@@ -4,16 +4,9 @@ const app = express()
 
 app.set("view engine","ejs")
 app.get("/",(req,res)=>{
-    res.send("Hello!!")
-})
-app.get("/about",(req,res)=>{
-    res.send("About")
-})
-app.get("/Contact",(req,res)=>{
-    res.render("index")
-})
-app.get("/support",(req,res)=>{
-    res.redirect("/")
+    const array = [{name:"sweta",age:22},{name:"vandita",age:40},{name:"uma",age:50}]
+
+    res.render("home",{array})
 })
 
 app.listen(3000)
