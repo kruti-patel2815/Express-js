@@ -1,20 +1,47 @@
-<h1>This is home page</h1>
- 
+<h1>This is Student Result</h1>
+
 <table border="1">
     <tr>
-        <td>name</td>
-        <td>age</td>
+        <td>No.</td>
+        <td>Name</td>
+        <td>Sub1</td>
+        <td>Sub2</td>
+        <td>Sub3</td>
+        <td>Total</td>
+        <td>Percentage</td>
+        <td>Min</td>
+        <td>Max</td>
     </tr>
 
-    <% array.map((i,index)=>{
-        %>
+    <% arrayobj.map((i,index)=> { %>
         <tr>
+            <td>
+                <%= index + 1 %>
+            </td>
             <td>
                 <%= i.name %>
             </td>
             <td>
-                <%= i.age %>
+                <%= i.sub1 %>
+            </td>
+            <td>
+                <%= i.sub2 %>
+            </td>
+            <td>
+                <%= i.sub3 %>
+            </td>
+            <td>
+                <%= total(i) %>
+            </td>
+            <td>
+                <%= percentage(i) %>
+            </td>
+            <td>
+                <%= min(i.sub1, i.sub2, i.sub3) %>
+            </td>
+            <td>
+                <%= max(i.sub1, i.sub2, i.sub3) %>
             </td>
         </tr>
-   <% })%>
+        <% }) %>
 </table>
