@@ -1,0 +1,35 @@
+<form action="/createData">
+    name = <input type="text" name="name" value="<%= (editData) ? editData.name:""%>" id=""><br><br>
+    surname = <input type="text" name="surname" value="<%= (editData) ? editData.surname:""%>" id=""><br><br>
+    <input type="submit" name="" id="">
+</form>
+
+<table border="1">
+    <tr>
+        <td>No.</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>Delete</td>
+        <td>Edit</td>
+    </tr>
+    <% setData.map((i,index)=>{%>
+        <tr>
+            <td>
+                <%= index + 1 %>
+            </td>
+            <td>
+                <%= i.name%>
+            </td>
+            <td>
+                <%= i.surname %>
+            </td>
+            <td>
+                <button><a href="/deleteData/<%=index %>">Delete</a></button>
+            </td>
+            <td>
+                <button><a href="/editData/<%=index %>">Edit</a></button>
+            </td>
+        </tr>
+
+        <%})%>
+</table>
